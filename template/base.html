@@ -1,0 +1,76 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="{{ LANGUAGE_CODE|default:"en-us" }}" xml:lang="{{ LANGUAGE_CODE|default:"en-us" }}" {% if LANGUAGE_BIDI %}dir="rtl"{% endif %}>
+<head>
+<title>{% block title %}{% endblock %}</title>
+<link href='/static/css/bootstrap.min.css' rel='stylesheet'>
+<link href='/static/css/bootstrap-theme.css' rel='stylesheet'>
+<link href='/static/css/bootstrap-switch.min.css' rel='stylesheet'>
+<link href='/static/css/index.css' rel='stylesheet'>
+{% block css %}{% endblock %}
+<script type="text/javascript">
+    function functionAll(){
+        fuckSorts();
+        judgeJ();
+    }
+</script>
+</head>
+
+<body onload="functionAll()">
+<!--[if lt IE 9]>
+        <h3 style="color:black;background: #FF5;margin: 0;padding:10px;position: fixed; z-index: 99;width: 100%" class="text-center">
+            此浏览器太旧，或处于兼容模式
+        </h3>
+        <![endif]-->
+        <noscript style="color:black;background: #FF5;margin: 0;padding:10px;position: fixed; z-index: 99;width: 100%" class="text-center">
+            必须启用javascript才能正确浏览
+        </noscript>
+        <div class='main-header'>
+            <div id="blogTitle">
+                <h2>{{people.username|default:"未登录"|upper}}'S BLOG</h2>
+                <h5>你必有一个锦绣的前程</h5>
+                <canvas id="bubbleCanvas" width="241" height="240">你的浏览器版本过低</canvas>
+            </div>
+            <div class='nav row'>
+                <a class="animation" href="/index">我的 | MyBlog</a>
+                <a class="animation" href="/timeline">时间轴 | Timeline</a>
+				{% if people %}
+				<a class="animation" href="/friends">朋友 | Friends</a>
+				{% else %}
+				<a class="animation" style="cursor:pointer" onclick="window.alert('没有账号哪有朋友？︿(￣︶￣)︿（将为你跳转到注册页面）');window.location.href='/register';"><del>朋友 | Friends</del></a>
+				{% endif %}
+                <a class="animation" href="/about">简介 | About</a>
+            </div>
+        </div>
+
+            <div class="content-warp">
+            <div class="container">
+    <div class="row">
+
+<!--     主要内容     -->
+{% block content %}{% endblock %}
+
+</div>
+</div>
+<div class='main-footer'>
+            <div class="container">
+                <div class="logo">
+                {{people.username|default:"Anonymous"|upper}} BLOG
+                </div>
+                <p>
+                    &nbsp; {{people.username|default:"Anonymous"}}'s original blog.
+                    <br>
+                    「永远年轻，永远热泪盈眶」
+                </p>
+            </div>
+            
+            <h5 class="copyright text-center">
+                &copy;2016 Caden 版权所有  &nbsp;|&nbsp; 版本:1006_0510 版本 &nbsp;|&nbsp; 感谢各位小伙伴的热情找BUG &nbsp;| 
+                                <a href='/admin' target="blank">&nbsp;管理&nbsp;</a>
+                            </h5>
+        </div>
+		<script src="/static/js/jquery.min.js"></script>
+        <script src="/static/js/bootstrap-switch.min.js"></script>
+        <script src="/static/js/bubble.js"></script>
+		{% block js %}{% endblock %}
+</body>
+</html>

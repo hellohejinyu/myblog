@@ -1,0 +1,90 @@
+{% extends "base.html" %}
+{% block title %}{{ people.username }} - 发布{% endblock %}
+{% block js %}
+
+<script type="text/javascript">
+	function newsortJ(strSelect){
+		if (strSelect == '1newsort'){
+			document.getElementById("type_id").disabled=false;
+			document.getElementById("newsort").disabled=false;
+		}
+		else{
+			document.getElementById("type_id").disabled=true;
+			document.getElementById("newsort").disabled=true;
+		}
+	}
+	function judgeJ(){
+		if (document.getElementById("kjhe").value == '1newsort'){
+			newsortJ('1newsort');
+		}
+	}
+	function fuckSorts(){
+		//这里不能删除，否则会有BUG
+	}
+</script>
+{% endblock %}
+
+{% block content %}
+
+        <!--start main content aera-->
+        <div class="row col-md-12 main-content">		
+        <form action="" name="form" method="POST" >
+        	<div class="col-md-6"><input name="biaoti" type="text" class="form-control" placeholder="文章标题" required="required"></div>
+			
+			<div class="col-md-2">
+			<select name="ispublic" class="form-control">
+			<option value="1">所有人可见</option>
+			<option value="0">仅自己可见</option>
+			</select>
+			</div>
+
+			<div class="col-md-4"><input name="author"class="form-control" type="text" placeholder="作者：{{people.username}}" readonly ></div>
+		</div>
+
+		<div class="row col-md-12 main-content">
+			<div class="col-md-4">
+				<select name="sort" id="kjhe" class="form-control" onchange="newsortJ(this.value)">
+				{%  for sort in sorts %}
+				<option value="{{sort.id}}">{{ sort.title }}</option>
+				{% endfor %}
+				<option value="1newsort">增加分类</option>
+				</select>
+			</div>
+
+			<div class="col-md-4">
+				<select id="type_id" name="type_id" class="form-control" disabled="disabled">
+				{% for type in types %}
+				<option value="{{type.id}}">{{ type.title }}</option>
+				{% endfor %}
+				</select>
+			</div>
+
+			<div class="col-md-4">
+				<input id="newsort" type="text" name="newsort" class="form-control" placeholder="新的子类名称" disabled="disabled" required="required">
+			</div>
+		</div>
+		
+
+		<div class="row col-md-12 main-content">
+			<div class="col-md-12">
+				<input name="zhaiyao" type="text" class="form-control" placeholder="文章摘要" required="required">
+			</div>
+		</div>
+		<script src="//cdn.ckeditor.com/4.5.8/full/ckeditor.js"></script>
+		<div class="row col-md-12 main-content">
+			<div class="col-md-12">
+				<textarea id="content" name="content" class="form-control" rows="13" cols="130" placeholder="这里输入文章内容" required></textarea>
+				<script type="text/javascript">CKEDITOR.replace('content');</script>
+			</div>
+		</div>
+	
+		<div class="row col-md-12 main-content">
+			<div class="col-md-12">
+				<br/>
+				<button class="btn btn-default" type="submit">提交</button>
+			</div>
+		</div>
+</div>   
+{% endblock %}
+
+

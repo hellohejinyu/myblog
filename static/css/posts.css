@@ -1,0 +1,95 @@
+
+/*******文章******/
+div.main-content {
+    padding-left: 10px;
+    margin-bottom: 10px;
+}
+div.post {
+    background:#f8f8f8;
+    margin-bottom: 2px;
+    padding: 3px 0 0 0;
+    border-left: 8px #ccc solid;
+    box-shadow: 0 1px 4px #aaa;
+}
+div h4.post-title {
+    padding: 10px 10px 0 20px ;
+    color: #2ca6cb;
+    font-size: 24px;
+}
+
+div.post:hover {
+    border-left: 8px #ea6753 solid;
+}
+div.post p {
+    margin-bottom: 0;
+    padding:5px 20px 0px 20px;
+    color: #817c7c;
+    line-height: 1.6;
+    word-wrap:  break-word;
+    font-size: 16px;
+}
+div.post p.time {
+    height:  auto;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+.main-content em {
+    font-style: normal;
+    color: #fafafa;
+    padding: 1px 2px;
+    border-radius: 4px;
+    background: #f4645f
+}
+
+
+.main-content .find-info {
+    color: #f4645f;
+    font-size: 20px;
+    padding: 10px;
+    background: #fafafa;
+    border: 1px #ccc solid;
+}
+
+
+.page-nav {
+    text-align: center;
+    padding: 0;
+}
+
+.page-nav .page-pre {
+    float: left;
+    padding: 10px 10px;
+}
+.page-pre:hover, .page-next:hover, .page-num:hover {
+    color: #ea6753;
+    background: #ccc;
+}
+.page-nav .page-next {
+    float: right;
+    padding: 10px 10px;
+}
+
+.page-nav .page-num {
+    display: inline-block;
+    padding: 10px 12px;
+}
+
+.page-nav .page-num-cur {
+    color: #ea6753;
+    display: inline-block;
+    padding: 10px 12px;
+    font-weight: bold;
+}
+.page-nav span.space {
+    color: #2ca6cb;
+    padding: 0 5px;
+}
+.nav-info {
+    text-align: center;
+}
+.nav-info .posts-info {
+    font-size: 20px;
+    color: #666;
+    padding: 5px 20px;
+}

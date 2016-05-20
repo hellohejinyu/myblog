@@ -1,0 +1,234 @@
+::selection{background:#f4645f;}
+::-moz-selection { background:#f4645f; }
+.animation {
+transition-duration: 0.5s;
+-moz-transition-duration: 0.5s; /* Firefox 4 */
+-webkit-transition-duration: 0.5s; /* Safari 和 Chrome */
+-o-transition-duration: 0.5s; /* Opera */
+}
+a{
+    text-decoration: none;
+    color: #31a3cb;
+}
+a:hover{
+    text-decoration: none;
+}
+
+body {
+    color:#505050;
+    background: #ddd;
+    font-family: "微软雅黑","Helvetica Neue",Helvetica,Arial,sans-serif;
+    overflow-x: hidden;
+}
+.sidebar {
+    margin-bottom: 0;
+}
+.sidebar-content {
+    padding: 20px;
+    padding-top: 10px;
+    background-color: #f8f8f8;
+    box-shadow: 0 1px 4px #aaa;
+}
+
+.nav-sidebar {
+    margin-bottom: 0;
+}
+.nav-sidebar > li > a {
+    padding: 7px 10px;
+    color: #817c7c;
+    font-size: 16px;
+    border-bottom: 1px #ddd solid;
+}
+
+.nav-sidebar > .active > a,
+.nav-sidebar > .active > a:hover,
+.nav-sidebar > .active > a:focus {
+    color: #ea6753;
+}
+
+div .sidebar h5 {
+    margin-bottom:5px;
+    padding: 10px 0 10px 0;
+    font-size: 17px;
+    color: #31a3cb;
+    border-bottom: 3px #ccc solid;
+}
+div .sidebar h5.info {
+    padding-top:0;
+}
+div .sidebar sup {
+    padding-left: 5px;
+    top:-8px;
+}
+div .sidebar form {
+    width: 100%;
+    margin: 7px 0 15px 0;
+}
+div .sidebar #search {
+    width: 60%;
+    display: inline-block;
+    height: 30px;
+}
+div .sidebar button {
+    width: 35%;
+    display: inline-block;
+    background: #f4645f;
+    color: #fafafa;
+    padding: 5px 10px;
+    border-radius: 2px;
+    border: none;
+    font-size: 14px;
+}
+div .sidebar button:hover {
+    background: #555;
+}
+
+/*my info card */
+.card {
+    border-radius: 3px;
+    background: #fff;
+    color: #555;
+    text-align: center;
+    box-shadow: 0px 1px 2px  #aaa;
+    margin-top: 12px;
+}
+.card .header {
+    background-position: top left;
+    background-image: url(../pics/card.png);
+    background-size: cover;
+    height: 148px;
+}
+.card .avater {
+    display: inline-block;
+    margin-top: -40px;
+    position: relative;
+    background: #fff;
+    box-shadow: 0 1px #ccc;
+    border-radius: 100%;
+    border: 3px #fff solid;
+    overflow: hidden;
+}
+.card img {
+    display: block;
+    width: 80px;
+    height: 80px;
+    
+}
+.card h3 {
+    margin: 10px 0 20px;
+    color: #111;
+}
+.card ul {
+    list-style-type:  none;
+    border-top:1px #eee solid;
+    margin: 0;
+    padding: 0;
+}
+.card ul li {
+    float:left;
+    width: 50%;
+    padding: 8px 0;
+    border-left: 1px #eee solid;
+}
+.card ul li b{
+    font-size: 17px;
+    color: #111;
+}
+/*******main*******/
+.main-header {
+    top:0;
+    width: 100%;
+    background: #f4645f ;
+    background-image: url(../pics/home.jpg);
+    margin-bottom:30px;
+    box-shadow: 2px 4px 5px #aaa;
+    
+}
+
+#blogTitle {
+    position: relative;
+    /*background:#333;*/
+    width: 100%;
+    height: 60px;
+    text-align: center;
+    color: #fafafa;
+    margin-top: 0px;
+    margin-bottom: 50px;
+}
+#blogTitle h2 {
+    width: 100%;
+    padding-top: 30px;
+    font-size: 40px;
+    margin-top: 0;
+}
+#blogTitle h5 {
+    font-size: 20px;
+    padding-top: 10px;
+}
+
+/*canvas气泡动画*/
+#bubbleCanvas{
+    position: absolute;
+    top: 10px;
+    left:50%;
+    margin-left:-150px;
+    bottom: 0;
+    /*
+        not be supposed on ie9&9-
+      -webkit-transform: translate3d(-50%,0,0);
+      -moz-transform: translate3d(-50%,0,0);
+      -ms-transform: translate3d(-50%,0,0);
+      -o-transform: translate3d(-50%,0,0);
+    */
+}
+
+div.nav {
+    margin:80px 0 0 0;
+    padding: 5px;
+    text-align: center;
+}
+
+div.nav  a {
+    color: #fafafa;
+    font-size: 18px;
+    padding: 5px 25px;
+    display: inline-block;
+}
+div.nav  a:hover {
+    background: #dd2c11;
+}
+
+div.main-footer {
+    margin: 20px 0 0 0;
+    background: #222;
+    border-top: 3px #f4645f solid;
+}
+div.main-footer .logo {
+    font-weight: bold;
+    color: #eee;
+    background: #f4645f;
+    display: inline-block;
+    margin-left: 5%;
+    padding: 8px 16px;
+    font-size: 19px;
+}
+div.main-footer p {
+    margin: 0;
+    padding: 40px 10px 50px 15%;
+    color: #ccc;
+    font-size: 20px;
+}
+h5.copyright {
+    color: #aaa;
+    background: #151515;
+    border-top: 1px #2a2a2a solid;
+    padding: 20px 0;
+    margin: 0;
+    font-size: 13px;
+}
+h5.copyright a {
+    color: #aaa;
+}
+h5.copyright a:hover {
+    color: #ccc;
+}

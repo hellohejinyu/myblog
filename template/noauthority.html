@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% block title %}警告！{% endblock %}
+{% block css %} 
+<link href='/static/css/prism.css' rel='stylesheet'>
+<link href='/static/css/article.css' rel='stylesheet'>
+{% endblock %}
+{% block content %}
+        <!--start main content aera-->
+        <div class="col-md-12  main-content">
+            <div class="post">
+                
+               <!--start article header aera--> 
+               <div class="header">
+                    <div class="title">
+                        <h2 class='text-center' style="color:red">没有权限浏览该篇文章</h2>
+                    </div>
+               </div>
+           
+               <!--start main article aera--> 
+               <div class="article">
+                    
+                    <p class='para' >
+				该篇文章为作者[{{articles.author}}]私人文档，只有本人可以查看，请登录！
+					</p>
+               </div>               
+               <!--start article footer aera--> 
+               <div class="footer">
+                   <p class="copyinfo"><a href='/login/'>登录</a></p>                  
+               </div>
+            </div>
+
+
+        </div>
+{% endblock %}
+
+
+

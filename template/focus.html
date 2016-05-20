@@ -1,0 +1,75 @@
+{% extends "base.html" %}
+{% block title %}{{people.username}} - 朋友{% endblock %}
+{% block css %}<link href='/static/css/posts.css' rel='stylesheet'>{% endblock %}
+{% block content %}
+        
+        <!--start main content aera-->
+   <div class="col-md-4 sidebar">
+    <div class="sidebar-content">
+     
+        <!-- start info area -->
+        <div class="card">
+            <div class="avater">
+                <img alt="avater" src="http://lihancong.cn/public/pics/head.png">
+
+            </div>
+            <div class="content">
+                <h3>{{people.username}}</h3>
+                <ul class="status">
+                    <li><b>{{focusC}}</b><br>关注</li>
+                    <li><b>{{fansC}}</b><br>粉丝</li>
+                </ul>
+            </div>
+		<div style="clear:both;"></div>
+		</div>
+        <!-- start category area -->    
+    </div>
+</div>   
+
+
+ <div class="col-md-4  main-content">
+		<div class="post animation">
+			<span style="padding:3px;font-size:20px">关注</span>
+		</div>
+		{% if not focus %}
+			<div class="post animation">
+                <h4 class='post-title'>
+                    <a style="color:black">空空如也</a>
+                </h4>
+                    <p style="text-align:right"><span style="color:black;">/(ㄒoㄒ)/~~</p>
+            </div>
+		{% endif %}
+		{% for focuss in focus %}
+                <div class="post animation">
+                <h4 class='post-title'>
+                    <a href="/detail/{{focuss.master.id}}">{{focuss.master.username}}</a>
+                </h4>
+                    <p style="text-align:right"><span style="color:#31a3cb;">人气值：</span>{{focuss.master.score}}</p>
+            </div>
+        {% endfor %}
+               
+</div>
+		
+<div class="col-md-4  main-content">
+		<div class="post animation">
+			<span style="padding:3px;font-size:20px">粉丝</span>
+		</div>
+		{% if not fans %}
+			<div class="post animation">
+                <h4 class='post-title'>
+                    <a style="color:black;">空空如也</a>
+                </h4>
+                    <p style="text-align:right"><span style="color:black;">/(ㄒoㄒ)/~~</p>
+            </div>
+		{% endif %}
+		{% for fanss in fans %}
+            <div class="post animation">
+                <h4 class='post-title'>
+                    <a href="/detail/{{fanss.slave.id}}">{{fanss.slave.username}}</a>
+                </h4>
+                    <p style="text-align:right"><span style="color:#31a3cb;">人气值：</span>{{fanss.slave.score}}</p>
+            </div>
+        {% endfor %}
+               
+</div>
+{% endblock %}

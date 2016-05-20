@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% block title %}时间线{% endblock %}
+{% block css %}<link href='/static/css/timeline.css' rel='stylesheet'>{% endblock %}
+{% block content %}
+        
+        <!--start main content aera-->
+        <div class="col-md-12 main-content">
+		{% if not articles %}
+			<div class="timeline-img"></div>
+            <div class="triangle-left"></div>
+            <div class="post animation">
+                <h4 class='post-title'>
+                    <a>空空如也</a>
+                </h4>
+                <p >
+这里啥也没有~
+</p>
+                <p class='time'>/(ㄒoㄒ)/~~</p>
+            </div>
+		{% endif %}
+{% for article in articles %}
+                        <div class="timeline-img"></div>
+            <div class="triangle-left"></div>
+            <div class="post animation">
+                <h4 class='post-title'>
+                    <a  href="/blogs/{{article.id}}" class=''>{{article.title}}</a>
+                </h4>
+                <p >
+{{article.summary}}
+</p>
+                <p class='time'>{{article.times}}</p>
+            </div>
+                
+
+{% endfor %}   
+</div>   
+{% endblock %}
+
+        
+  

@@ -1,0 +1,66 @@
+{% extends "base.html" %}
+{% block title %}关于{% endblock %}
+{% block css %}
+<link href='/static/css/prism.css' rel='stylesheet'>
+<link href='/static/css/article.css' rel='stylesheet'>
+{% endblock %}
+
+{% block content %}
+
+
+        <!--start main content aera-->
+        <div class="col-md-12  main-content">
+            <div class="post">
+                
+               <!--start article header aera--> 
+               <div class="header">
+                    <div class="title">
+                        <h2 class='text-center'>关于 | About</h2>
+                    </div>
+                    <div class='time'><br></div>
+                    <div style="clear:both;"></div>
+               </div>
+               
+               <!--start main article aera--> 
+               <div style="border-bottom: none;"  class="article" >
+                    
+                    <a href='' class='thumbnail' >
+<img src='http://ww3.sinaimg.cn/large/be14b874gw1f31tqzlj9xj20qe05kt9p.jpg' alt=''>
+</a>
+
+<h4>自我介绍</h4>
+<p class='para' >
+作者<code class='s'>Caden</code>，我们的征途是星辰大海。
+</p>
+
+<h4>博客介绍</h4>
+
+<p class='para' >
+因为毕业设计而搭建的一个博客网站，本意是准备做成个人博客网站的，最后添添补补就做成了一个公共的博客网站，每个人都可以注册属于自己的账号发布博文，鉴于个人水平有限，系统难免有缺陷，还望指正。
+</p>
+
+
+<p class='para' >
+此博客主要基于：
+</p>
+
+<blockquote>
+<p class='para-quote' >
+Python + Django
+</p>
+<p class='para-quote' >
+Bootstarp3 响应式布局
+</p>
+</blockquote>
+
+
+<h4>联系方式</h4>
+<p class='para' >
+E-mail：my@austrator.com
+</p>
+
+
+               </div>
+            </div>
+        </div>
+{% endblock %}

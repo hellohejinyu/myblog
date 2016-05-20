@@ -1,0 +1,106 @@
+{% extends "base.html" %}
+{% block title %}未登录 - 首页{% endblock %}
+{% block css %}<link href='/static/css/posts.css' rel='stylesheet'>{% endblock %}
+{% block js %}
+<script type="text/javascript">
+    function Link(){
+        window.location.href = '/register';
+        return false;
+    }
+</script>
+{% endblock%}
+{% block content %}
+
+ <!--start main content aera-->
+        <div class="col-md-9  main-content">
+		{% if not articles%}
+				<div class="post animation">
+                <h4 class='post-title'>
+                    <a>空空如也</a>
+                </h4>
+                                <p >快来写点什么吧！</p>
+                                <p class='time' style="text-align:right">/(ㄒoㄒ)/~~</p>
+				</div>
+		{% endif %}
+		 {% for article in articles %}
+                        <div class="post animation">
+                <h4 class='post-title'>
+                    <a  href="/blogs/{{article.id}}" class=''>{{ article.title }}</a>
+                </h4>
+                                <p >
+{{article.summary}}
+</p>
+                                <p class='time'>{{article.times}}</p>
+            </div>
+            {% endfor %}
+            <div class="page-nav post animation clearfix" style="padding:0">
+               	<a class='page-num-cur' href="?page=1">首页</a>
+               	{% if articles.has_previous %}
+				<a class="page-pre" href="?page={{ articles.previous_page_number }}">< 上页</a>
+				{% endif %}
+
+				{% for p in page_range %}
+				{% ifequal p articles.number %}
+				<a href="?page={{p}}" class="page-num">{{p}}</a>
+				{% else %}
+				<a class="page-num" href="?page={{p}}" title="{{p}}">{{p}}</a>
+				{% endifequal %}
+				{% endfor %}
+
+                {% if articles.has_next %}
+			    <a class='page-next' href=?page={{ articles.next_page_number }}>下页 ></a>
+			    {% endif %}
+               
+            </div>                 
+                        
+                    </div>
+
+              <div class="col-md-3 sidebar">
+    <div class="sidebar-content">
+        <!-- start search area -->
+        <form class="form-horizontal" role="form"  action="/search" method="GET">
+            <input  id="search"  class="form-control" name="s" type="text" value="" >&nbsp;
+            <button type="submit" class="animation">搜 索</button>
+        </form>
+        
+        <!-- start info area -->
+        <div class="card" style="padding:5px">
+
+				<form action="/login/" name="form" method="POST" class="form-horizontal" role="form">
+				<input type="text" name="username" placeholder="用户名" class="form-control" required="required"><br/>
+				<input type="password" name="password" placeholder="密码" class="form-control" required="required">
+				<br/>
+				<p style="color:red" >{{flag}}</p>
+			   	<button type="submit" class="animation">登录</button>
+                <button onclick="Link()" type="button">注册</button>
+				</form>
+        </div>
+
+        <!-- start category area -->
+        <h5>热门<sup>点击量</sup></h5>
+        <ul class='nav nav-sidebar'>
+
+
+		   {% for artdjl in artdjl %}
+                        <li class="">
+                <a href="/blogs/{{artdjl.id}}">{{ artdjl.title }}<sup>{{artdjl.artscore}}</sup></a>
+            </li>
+            	{% endfor %}
+        </ul>
+
+        <h5>名人<sup>热度</sup></h5>
+        <ul class='nav nav-sidebar'>
+
+
+		   {% for userdjl in userdjl %}
+                        <li class="">
+                <a href="/detail/{{userdjl.id}}">{{ userdjl.username }}<sup>{{userdjl.score}}</sup></a>
+            </li>
+            	{% endfor %}
+        </ul>
+    </div>
+</div>    
+    </div>
+
+{% endblock %}
+

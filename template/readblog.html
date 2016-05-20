@@ -1,0 +1,61 @@
+{% extends "base.html" %}
+{% block title %}详细内容{% endblock %}
+{% block css %} 
+<link href='/static/css/prism.css' rel='stylesheet'>
+<link href='/static/css/article.css' rel='stylesheet'>
+{% endblock %}
+{% block content %}
+        <!--start main content aera-->
+        <div class="col-md-12  main-content">
+            <div class="post">
+                
+               <!--start article header aera--> 
+				<div class="header">
+                    <div class="title">
+                        <h2 class='text-center'>{{articles.title}}</h2>
+                </div>
+                    <div class='time' >发表于 {{articles.times}}</div>
+					<div class='time' style="cursor:pointer;" onclick="location='/detail/{{articles.author.id}}'"><b style="color:red">{{articles.author}}</b></div>
+                    <div style="clear:both;"></div>
+               </div>
+           
+               <!--start main article aera--> 
+               <div class="article">
+                    
+                    <p class='para' >
+				{{articles.content|safe }}
+					</p>
+
+               </div>
+               
+               <!--start article footer aera--> 
+               <div class="footer">
+                   <p class="copyinfo">*版权均为作者所有，转载需注明出处</p>
+                   <p class="copyinfo">阅读量：{{articles.artscore}}</p>
+                   <div style="clear: both;"></div>
+				   {% if not people.username %}
+				   <a class="ret animation" href="http://{{hostAddr}}/index"><b>&lt;</b> 回到主页</a>
+				   {% else %}
+                   <a class="ret animation" href="http://{{hostAddr}}/types/{{type.id}}"><b>&lt;</b> 回到分类: {{type.title}}</a>
+				   {% endif%}
+               </div>
+
+            </div>
+			<div style="float:right" id="cyReward" role="cylabs" data-use="reward"></div>
+
+			<!--高速版-->
+<div id="SOHUCS" sid="{{articles.id}}"></div>
+<script charset="utf-8" type="text/javascript" src="http://changyan.sohu.com/upload/changyan.js" ></script>
+<script type="text/javascript">
+    window.changyan.api.config({
+        appid: 'cysmFsCRK',
+        conf: 'prod_a3e4f0682f688df6bf8d5e12681b3c94'
+    });
+</script> 
+<script type="text/javascript" charset="utf-8" src="http://changyan.itc.cn/js/??lib/jquery.js,changyan.labs.js?appid=cysmFsCRK"></script>
+
+        </div>
+{% endblock %}
+
+
+

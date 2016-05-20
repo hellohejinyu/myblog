@@ -1,0 +1,107 @@
+.main div.time {
+     font-size: 12px;
+     margin-right: 10px;
+     color: #aaa;
+ }
+
+.post h4{
+     color:#333;
+     font-size: 26px;
+     margin-left:0;
+     border-bottom: 2px solid #dbdbdb;
+     margin-top: 40px;
+     padding: 10px 0;
+ }
+ .post .header, .post .article {
+     border-bottom: 1px solid #dbdbdb;
+ }
+ .post .title {
+     border-left: 5px solid #ea6753;
+ }
+ .post h2 {
+    color:#2ca6cb; 
+    font-size: 20px;
+    padding: 15px 35px;
+    margin: 0;
+    font-size: 30px;
+    text-align:  left;
+}
+.post .time {
+    font-size: 15px;
+    float: right;
+    color: #777;
+    margin-right: 40px;
+    margin-bottom: 10px;
+    padding-top: 5px;
+}
+
+.post .footer .copyinfo {
+    color: #666;
+    padding: 10px 20px;
+    float: right
+}
+.post a.ret {
+    display: inline-block;
+    color: #2ca6cb;
+    padding: 6px 10px;
+    font-size: 15px;
+    margin: 10px 0 10px 15px;
+}
+.post a.ret:hover {
+    background: #2ca6cb;
+    color: #fafafa;
+}
+.post p.para {
+    font-size: 16px;
+    word-wrap: break-word;
+    margin: 15px 0;
+}
+
+pre {
+    font-size: 14px;
+    border-radius: 0;
+    border: 1px #ddd solid;
+    background: #efefef;
+}
+code.s {
+    border: 1px solid #ddd;
+}
+.post blockquote p.para-quote {
+    color: #666;
+    font-size: 14px;
+    text-align: left;
+    word-wrap: break-word;
+}
+.post blockquote {
+    border-left:  3px solid #f4645f;
+    padding: 6px 15px;
+} 
+
+ul.para {
+    font-size: 16px;
+    word-wrap: break-word;
+    padding-left: 25px;
+}
+.post .thumbnail {
+    background: transparent;
+    border: 1px solid #e5e5e5;
+}
+.post .article {
+    padding: 10px 35px 35px 35px;
+    margin-bottom: 10px;
+}
+@media (max-width: 768px) {
+    .post .article {
+        padding: 10px 15px 35px 15px;
+        margin-bottom: 10px;
+    }
+}
+
+.post {
+    padding: 0;
+    background: #f8f8f8;
+    margin-bottom: 10px;
+    overflow: hidden;
+    box-shadow: 0px 1px 2px  #aaa;
+    color: #413f3f;
+}

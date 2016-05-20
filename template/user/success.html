@@ -1,0 +1,17 @@
+{% extends "user/register_base.html" %}
+{% block title %}注册成功{% endblock %}
+{% block js %}
+<script type="text/javascript">
+	function SuccessReg(){
+		alert('恭喜注册成功！将为你跳转到登录页面！')
+		window.location.href='/login'
+	}
+</script>
+{% endblock %}
+
+{% block content %}
+<body onload="SuccessReg()">
+	<!--注册成功！-->
+	<span style="font-size:100px">:)</span>
+</body>
+{% endblock %}

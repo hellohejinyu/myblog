@@ -1,0 +1,128 @@
+#daohang{
+float:left;
+padding-bottom: 5px;
+repeat-x top left;
+position:fixed;
+top: 0;
+left: 0;
+right: 0;
+height: 35px;
+font-size:30px;
+background-color: #18a5cc;
+}
+
+#user{
+float:left;
+}
+
+ .style4{
+ width: 100%;
+ height: 100%;
+ margin: 0px auto;
+ margin-bottom:20px;
+ border:1px solid #CCEFF5;
+ background-color: #FAFCFD
+ }
+
+.style1{
+ width: 100%;
+ 
+ margin: 0px auto;
+ margin-bottom:2px;
+ border:1px solid #96C2F1;
+ background-color: #EFF7FF;
+ font-size:18px
+ -webkit-border-radius:3px;
+ -moz-border-radius:3px;
+ -o-border-radius:3px;
+ border-radius:3px;
+ }
+ 
+.biaoge{ 
+ 
+ 
+ border:1px solid #96C2F1;
+ background-color: #EFF7FF;
+ border-radius:3px;
+ } 
+ 
+ 
+.style2{
+
+ margin: 0px auto;
+ margin-bottom:3px;
+ border:3px solid #9BDF70;
+ background-color: #F0FBEB;
+ font-size:18px
+ -webkit-border-radius:3px;
+ -moz-border-radius:3px;
+ -o-border-radius:3px;
+ border-radius:3px;
+ }
+ 
+style9
+{
+ margin: 0px auto;
+ margin-bottom:20px;
+ border:1px solid #FFCC00;
+ background-color: #FFFFF7
+ }
+ .style3{
+ margin: 0px auto;
+ margin-bottom:3px;
+ border:2px solid #18a5cc;
+ background-color: #F0FBEB;
+ font-size:18px
+ -webkit-border-radius:5px;
+ -moz-border-radius:5px;
+ -o-border-radius:5px;
+ border-radius:5px;
+  
+  
+  
+  
+ }
+
+.btn {
+ width: 280px;
+ color: #eee;
+ padding: 4px;
+ text-transform: uppercase;
+ margin: 4px;
+ font-size: 15px;
+ background-color: #18a5cc;
+ border: none;
+ -webkit-transition: -webkit-box-shadow 0.1s linear;
+ -moz-border-radius: 4px;
+ -webkit-border-radius: 4px;
+ border-radius: 4px;
+ background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#18a5cc), to(#0a85a8));
+ background: -moz-linear-gradient(25% 75% 90deg,#0a85a8, #18a5cc);
+}
+.btn:hover {
+ -webkit-box-shadow: 0px 0px 20px #555;
+ -moz-box-shadow: 0px 0px 20px #aaa;
+ box-shadow: 0px 0px 20px #555;
+ cursor:pointer;
+}
+ #527F76   
+.style10{
+ margin: 0px auto;
+ margin-bottom:2px;
+ border:1px solid #96C2F1;
+ background-color: #EFF7FF;
+ font-size:18px;
+ }
+
+#noneline a:link { 
+text-decoration: none; 
+} 
+#nonelinea:visited { 
+#nonelinetext-decoration: none; 
+} 
+#nonelinea:hover { 
+text-decoration: underline; 
+} 
+#nonelinea:active { 
+text-decoration: none; 
+}

@@ -1,0 +1,69 @@
+{% extends "base.html" %}
+{% block title %}{{people.username}} - 修改个人信息{% endblock %}
+{% block css %} 
+<link href='/static/css/article.css' rel='stylesheet'>
+{% endblock %}
+{% block js %}
+<script type="text/javascript">
+  function ValiPas(){
+    // alert('1')
+    if (document.getElementById('newpas').value != document.getElementById('rechangepas').value){
+      alert('两次输入密码不一致！');
+	  document.getElementById('newpas').value = '';
+	  document.getElementById('rechangepas').value = '';
+	  document.getElementById('newpas').focus();
+    }
+    // alert(document.getElementById("inputPassword").value)
+  }
+</script>
+{% endblock %}
+{% block content %}
+        <!--start main content aera-->
+        <div class="col-md-6  main-content">
+            <div class="post">
+                
+             
+			<div style="padding:15px">
+			<form method="POST" action='/editplus/'>
+				<label for="username">用户名：</label>
+				<input type="text" class="form-control" name="username" value='{{people.username}}' readonly="true">
+				<label for="realname">真实姓名：</label>
+				<input type="text" class="form-control" name="realname" value='{{people.realname}}'>
+				<label for="email">Email：</label>
+				<input type="email" class="form-control" name="email" value='{{people.email}}'>
+				<label for="phone">电话：</label>
+				<input type="text" class="form-control" name="phone" value='{{people.phone}}' >
+				<label for="popular">人气值：</label>
+				<input type="text" class="form-control" name="popular" value='{{people.score}}' readonly="true">
+				<br/>
+				<button type="submit" class="btn btn-default">提交</button><span style="color:red">&nbsp;&nbsp;{{markEdit}}</span>
+
+			</form>
+		   </div>
+		   			     
+            </div>
+        </div>
+		<div class="col-md-6  main-content">
+            <div class="post">
+                
+             
+           <div style="padding:15px">
+			<form method="POST" action='/changepas/'>
+				<label for="newpas">修改密码：</label>
+				<input type="password" class="form-control" id="newpas" name="newpas" required>
+				<label for="rechangepas">确认密码：</label>
+				<input type="password" class="form-control" id="rechangepas" name="rechangepas" required onblur="ValiPas()">
+				<br/>
+				<button type="submit" class="btn btn-default">提交</button><span style="color:red">&nbsp;&nbsp;{{markPas}}&nbsp;</span>
+				{% if linkLogin == '1' %}
+					<a href="/login/">登录</a>
+				{% endif %}
+				
+			</form>
+		   </div>          
+               
+
+
+            </div>
+        </div>
+{% endblock %}
