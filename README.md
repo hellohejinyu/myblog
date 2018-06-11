@@ -1,1 +1,2 @@
-A BLOG WEBSITE DESIGNED BY PYTHON AND DJANGO.
+## 毕设项目
+> 使用 Django 框架编写的一个博客网站
