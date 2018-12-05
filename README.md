@@ -1,2 +1,3 @@
-## 毕设项目
-> 使用 Django 框架编写的一个博客网站
+# MyBlog
+
+A blog site written using the Django framework for graduation
