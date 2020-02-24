@@ -346,20 +346,20 @@ def Releaseblog(request):
         return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
  # 注册用户       
 def RegisterUser(request):
-    if request.method=='GET':
-            return render_to_response('user/info.html')
-    if request.method=='POST':
-        name=request.POST.get("username")
+    if request.method == 'GET':
+        return render_to_response('user/info.html')
+    if request.method == 'POST':
+        name = request.POST.get("username")
         password = request.POST.get('password')
         m = hashlib.md5()
         m.update(password)
         password_md5 = m.hexdigest()
-        users =Userlist.objects.filter(username=name)
-        if len(users)<=0:
+        users = Userlist.objects.filter(username=name)
+        if len(users) <= 0:
             validateNum = '1'
             user=Userlist()
-            user.username=name
-            user.userpassword=password_md5
+            user.username = name
+            user.userpassword = password_md5
             request.session['validateNum'] = validateNum
             request.session['user'] = user
             return HttpResponseRedirect('/checkregister/')
@@ -371,10 +371,9 @@ def RegisterUser(request):
 def CheckRegister(request):
     try:
         if request.session['user']:
-            yanzhengma = '1'
             user=request.session['user']
-            yanzhengcheck=request.session['validateNum']
-            if yanzhengma == yanzhengcheck:
+            validateNum=request.session['validateNum']
+            if validateNum == '1':
                 del request.session['user']
                 del request.session['validateNum']
                 user.save()

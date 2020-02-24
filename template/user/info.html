@@ -2,41 +2,54 @@
 {% block title %}用户注册{% endblock %}
 {% block js %}
 <script type="text/javascript">
-  function ValiPas(){
-    //alert('1')
-    if (document.getElementById('inputPassword').value != document.getElementById('inputPasswordRe').value){
-      alert('两次输入密码不一致！');
-	  document.getElementById('inputPassword').value = '';
-	  document.getElementById('inputPasswordRe').value = '';
-	  document.getElementById('inputPassword').focus();
+  function checkPass() {
+    var passEl = $('#inputPassword')
+    var passReEl = $('#inputPasswordRe')
+    if (passEl.val() !== passReEl.val()){
+      passEl.val('')
+      passReEl.val('')
+      passEl.focus()
+      $('.alert').show()
     }
-    //alert(document.getElementById("inputPassword").value)
   }
 </script>
 {% endblock %}
 {% block content %}
-<center>
-<form name="form1" action="" method="POST" class="form-signin">
-        <h2 class="form-signin-heading">用户注册</h2>
-        <label for="inputUser" class="sr-only">用户名</label>
-        <input type="text" id="inputUser" name="username" class="form-control" placeholder="用户名" required autofocus>
-        <label for="inputPassword" class="sr-only">密码</label>
-        <input type="password" id="inputPassword" name="password"  class="form-control" placeholder="密码" required>
-		<label for="inputPasswordRe" class="sr-only">确认密码</label>
-        <input type="password" id="inputPasswordRe" name="repassword"  class="form-control" placeholder="确认密码" required onblur="ValiPas()">
-		
-		<!--<div class="form-group">
-		<label for="valinum" class="col-sm-4 control-label">1+1=</label>
-		<div class="col-sm-8">
-		<input type="text" class="form-control" id="valinum" placeholder="验证码">
-		</div>-->
-        <!--<div class="checkbox">
-          <label>
-            <input type="checkbox" value="remember-me"> 我已阅读并接受<a>《注册条款》</a>。
-          </label>
-        </div>-->
-        <button class="btn btn-lg btn-primary btn-block" type="submit">注册</button>
-      </form>
-
-</center>
+<div class="alert alert-warning" role="alert" style="display: none;">两次密码输入不一致</div>
+<div style="text-align: center">
+  <form name="form1" action="" method="POST" class="form-signin">
+    <h2 class="form-signin-heading">用户注册</h2>
+    <label for="inputUser" class="sr-only">用户名</label>
+    <input
+      type="text"
+      id="inputUser"
+      name="username"
+      class="form-control"
+      placeholder="用户名"
+      required
+      autofocus
+      style="margin-bottom: 10px;"
+    />
+    <label for="inputPassword" class="sr-only">密码</label>
+    <input
+      type="password"
+      id="inputPassword"
+      name="password"
+      class="form-control"
+      placeholder="密码"
+      required
+    />
+    <label for="inputPasswordRe" class="sr-only">确认密码</label>
+    <input
+      type="password"
+      id="inputPasswordRe"
+      name="repassword"
+      class="form-control"
+      placeholder="确认密码"
+      required
+      onblur="checkPass()"
+    >
+    <button class="btn btn-lg btn-primary btn-block" type="submit">注册</button>
+  </form>
+</div>
 {% endblock %}

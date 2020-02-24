@@ -2,16 +2,16 @@
 {% block title %}注册失败{% endblock %}
 {% block js %}
 <script type="text/javascript">
-	function FailReg(){
-		alert('抱歉注册失败！将为你跳转到注册页面重新注册！')
-		window.location.href='/register'
+	function failReg() {
+		setTimeout(() => {
+			location.href = '/register'
+		}, 3000);
 	}
 </script>
 {% endblock %}
 
 {% block content %}
-<body onload="FailReg()">
-	<!--注册失败！-->
-	<span style="font-size:100px">:(</span>
+<body onload="failReg()">
+	<div class="alert alert-danger" role="alert">用户名重复，注册失败！系统 3 秒后跳转到注册页面。</div>
 </body>
 {% endblock %}

@@ -2,16 +2,16 @@
 {% block title %}注册成功{% endblock %}
 {% block js %}
 <script type="text/javascript">
-	function SuccessReg(){
-		alert('恭喜注册成功！将为你跳转到登录页面！')
-		window.location.href='/login'
+	function regSuccess() {
+		setTimeout(function() {
+			location.href = '/login'
+		}, 3000);
 	}
 </script>
 {% endblock %}
 
 {% block content %}
-<body onload="SuccessReg()">
-	<!--注册成功！-->
-	<span style="font-size:100px">:)</span>
+<body onload="regSuccess()">
+	<div class="alert alert-success" role="alert">用户注册成功！系统 3 秒后自动跳转到登录页面。</div>
 </body>
 {% endblock %}
